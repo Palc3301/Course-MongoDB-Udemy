@@ -1,0 +1,57 @@
+-Mostra os BDS:
+show dbs
+
+db.minhaCollection.insert({"valor": 456})
+Write Result({ "nInserted" : 1 })
+
+busca no BD e retorna o que foir inserido
+db.minhaCollection.find()
+
+database -> database
+collection -> table(tabela)
+document -> row(tupla)
+--------------------------------------------
+
+BSON
+Binary JSON
+
+{
+	"nome": "Pedro",
+	"idade": 20,
+	"gostaDe": ["MMA","VideoGame"],
+	"naFaculdade": true,
+	"materias": {
+		"pt": 8.5,
+		"math": 9.5
+	}
+}
+--
+Primary Key - chave primaria
+
+no mongo o "_id" : ObjectId("5f120fc48d55gsdg8sdg")
+" _id" pode ser numero, string
+mas o mais indicado é deixar o mongo fazer por si o id
+ID deve ser unico e o mongo sempre vai fazer um registro
+único gerado por si só
+
+--------------------------------------------
+-EX de FIND:
+db.nomeColocadoParaAchar.fin()
+
+-achar alunos:
+db.alunos.find()
+
+-JSON em formato bonito:
+db.alunos.find().prettY()
+
+-Acha apenas 1:
+db.alunos.findOne()
+
+-Acha apenas 1 id:
+db.alunos.findOne()._id
+-
+db.alunos.findOne()_id.getTimestamp()
+ISODate("2020-07-29T03:48:09Z")
+se o horario estiver errado o getTimestamp vai dar o horario da maquina
+
+--------------------------------------------
