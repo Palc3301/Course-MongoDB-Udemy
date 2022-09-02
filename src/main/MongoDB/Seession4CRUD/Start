@@ -1,0 +1,61 @@
+CRUD
+
+Create -> Criar um recurso
+    insert({})
+    insertOne({})
+    insertMany({}, {}, {})
+Read -> Ler o recurso
+    find({ })
+    findOne
+    ex1: db.crud.fin({ b: 456})
+
+    se o paramentro existe -> apenas os que tem c
+    ex2: db.crud.fin({ c: {$exists: true} })
+
+    não tem c
+    ex3: db.crud.findOne({ c: {$exists: false} })
+
+    Selecionar nome e materias
+    ex4: db.crud.finOne({} { nome: 1, materias: 1 })
+
+    Selecionar nome e materias mas não vem com o id
+    ex5: db.crud.finOne({} { nome: 1, materias: 1, _id: 0 })
+
+interessante testar com o find para não atualizar nada errado
+Update -> Atualizar o recurso
+    update
+    updateOne
+db.crud.updateOne({b: 456}, { $set: {d: 555} })
+
+    updateMany
+db.crud.updateMany({a: 123}, { $set: {h: 20} })
+
+    ReplaceOne
+db.crud.replaceOne({c: 789}, {outro: "documento"})
+
+interessante testar com o find para não atualizar nada errado
+Delete -> Deletar o recurso
+    deleteOne
+db.crud.deleteOne({a: 123})
+
+    deleteMany
+db.crud.deleteMany({b: 456})
+    sem nada nas chaves exclui tudo
+---------------------------------------------------------
+Anotação do propio curso
+
+Create -> Criar um recurso
+ insert({})
+ insertOne({})
+ insertMany([{}, {}, {}])
+Read -> Ler o recurso
+ find(<query>, <projection>)
+ findOne(<query>, <projection>)
+Update -> Atualizar o recurso
+ update(<query>, <update>, <options>)
+ updateOne(<query>, <update>, <options>)
+ updateMany(<query>, <update>, <options>)
+Delete -> Deletar o recurso
+ deleteOne(<query>)
+ deleteMany(<query>)
+---------------------------------------------------------

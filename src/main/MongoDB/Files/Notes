@@ -1,10 +1,15 @@
 -Mostra os BDS:
 show dbs
 
+-* Mudar o db
+    db
+    use nomedodb
+
+Inserir valor no DB
 db.minhaCollection.insert({"valor": 456})
 Write Result({ "nInserted" : 1 })
 
-busca no BD e retorna o que foir inserido
+busca no BD e retorna o que foi inserido
 db.minhaCollection.find()
 
 database -> database
@@ -36,7 +41,7 @@ ID deve ser unico e o mongo sempre vai fazer um registro
 
 --------------------------------------------
 -EX de FIND:
-db.nomeColocadoParaAchar.fin()
+db.nomeColocadoParaAchar.find()
 
 -achar alunos:
 db.alunos.find()
@@ -55,3 +60,10 @@ ISODate("2020-07-29T03:48:09Z")
 se o horario estiver errado o getTimestamp vai dar o horario da maquina
 
 --------------------------------------------
+Ver os logs de :
+cat mongo.log
+--------------------------------------------
+-criar collection:
+                 abaixo o metodo
+db.nomeDaCollection.insertMany
+
